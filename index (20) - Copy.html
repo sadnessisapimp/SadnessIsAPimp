@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Willie Johnson Books</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: Georgia, 'Times New Roman', serif; background: #fdf6ee; color: #2c1a0e; }
+
+    header { background: #2c1a0e; color: #fdf6ee; text-align: center; padding: 32px 20px 24px; }
+    header h1 { font-size: 2.4rem; letter-spacing: 2px; }
+    header p { margin-top: 8px; font-size: 1.05rem; color: #d4a96a; font-style: italic; }
+
+    nav { background: #4a2c0e; display: flex; justify-content: center; gap: 32px; padding: 12px; flex-wrap: wrap; }
+    nav a { color: #fdf6ee; text-decoration: none; font-size: 1rem; font-family: Arial, sans-serif; letter-spacing: 1px; }
+    nav a:hover { color: #d4a96a; }
+
+    section { padding: 48px 20px; max-width: 900px; margin: 0 auto; }
+    h2 { font-size: 1.8rem; color: #4a2c0e; border-bottom: 3px solid #d4a96a; padding-bottom: 8px; margin-bottom: 28px; }
+
+    .books-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 28px; }
+
+    .book-card { background: #fff; border: 1px solid #e0ccb0; border-radius: 8px; padding: 20px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.07); }
+    .book-cover { width: 100%; height: 160px; display: flex; align-items: center; justify-content: center; font-size: 4rem; margin-bottom: 14px; background: #f5ece0; border-radius: 6px; }
+    .book-title { font-size: 1.15rem; font-weight: bold; margin-bottom: 8px; color: #2c1a0e; }
+    .book-desc { font-size: 0.88rem; color: #7a5c3a; font-family: Arial, sans-serif; line-height: 1.5; margin-bottom: 14px; }
+
+    .btn-buy { display: block; width: 100%; padding: 11px; border-radius: 5px; font-size: 0.95rem; cursor: pointer; font-family: Arial, sans-serif; text-decoration: none; text-align: center; margin-bottom: 8px; border: none; font-weight: bold; }
+    .btn-ebook { background: #4a2c0e; color: #fdf6ee; }
+    .btn-ebook:hover { background: #d4a96a; color: #2c1a0e; }
+    .btn-physical { background: #2c7a2c; color: #fff; }
+    .btn-physical:hover { background: #1e5a1e; }
+    .btn-coming { background: #ccc; color: #666; cursor: not-allowed; }
+
+    .price-label { font-size: 0.85rem; font-family: Arial, sans-serif; color: #7a5c3a; margin-bottom: 4px; margin-top: 8px; }
+
+    #about p { font-size: 1.05rem; line-height: 1.8; max-width: 680px; color: #3a2010; margin-bottom: 12px; }
+
+    #contact label { display: block; font-family: Arial, sans-serif; font-size: 0.95rem; margin-bottom: 4px; margin-top: 14px; color: #4a2c0e; }
+    #contact input, #contact textarea { width: 100%; max-width: 500px; padding: 10px; border: 1px solid #c9a97a; border-radius: 5px; font-size: 0.95rem; font-family: Arial, sans-serif; background: #fff; }
+    #contact textarea { height: 110px; resize: vertical; }
+    #contact button { margin-top: 16px; background: #4a2c0e; color: #fdf6ee; border: none; padding: 12px 32px; border-radius: 5px; font-size: 1rem; cursor: pointer; font-family: Arial, sans-serif; }
+
+    footer { background: #2c1a0e; color: #a08060; text-align: center; padding: 24px; font-family: Arial, sans-serif; font-size: 0.88rem; }
+    footer a { color: #d4a96a; text-decoration: none; }
+
+    @media (max-width: 520px) { header h1 { font-size: 1.6rem; } nav { gap: 16px; } }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>📚 Willie Johnson Books</h1>
+  <p>Independent books, direct from the author — no middleman</p>
+</header>
+
+<nav>
+  <a href="#books">Books</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section id="books">
+  <h2>📖 Available Books</h2>
+  <div class="books-grid">
+
+    <!-- BOOK 1: Sadness Is A Pimp -->
+    <div class="book-card">
+      <div class="book-cover" style="padding:0;overflow:hidden;"><img src="https://i.imgur.com/pSZKTJl.png" alt="Sadness Is A Pimp" style="width:100%;height:100%;object-fit:cover;border-radius:6px;"/></div>
+      <div class="book-title">Sadness Is A Pimp</div>
+      <div class="book-desc">Sadness doesn't just visit — it controls you, takes your energy, your joy, your power. Like a pimp, it profits from your pain while keeping you dependent. This book shows you how to break free and reclaim your power.</div>
+      <div class="price-label">📱 E-Book — $10.00</div>
+      <a href="https://payhip.com/b/6eUfo" target="_blank" class="btn-buy btn-ebook">Buy E-Book</a>
+      <div class="price-label">📦 Physical Book — Coming Soon</div>
+      <span class="btn-buy btn-coming">Physical Copy Coming Soon</span>
+    </div>
+
+    <!-- BOOK 2: Tier 1 Marriage -->
+    <div class="book-card">
+      <div class="book-cover" style="padding:0;overflow:hidden;"><img src="https://i.imgur.com/U7bNJKV.png" alt="Tier 1 - The Perfect Marriage" style="width:100%;height:100%;object-fit:cover;border-radius:6px;"/></div>
+      <div class="book-title">Tier 1 — The Perfect Marriage</div>
+      <div class="book-desc">How to Create and Maintain the Perfect Marriage. A powerful guide to building a Tier 1 marriage rooted in love, trust, communication, and purpose. Whether newlywed or married for decades, elevate your relationship to its highest level.</div>
+      <div class="price-label">📱 E-Book — $10.00</div>
+      <a href="https://payhip.com/b/awcyP" target="_blank" class="btn-buy btn-ebook">Buy E-Book</a>
+      <div class="price-label">📦 Physical Book — Coming Soon</div>
+      <span class="btn-buy btn-coming">Physical Copy Coming Soon</span>
+    </div>
+
+    <!-- BOOK 3: What In Hell Do You Want -->
+    <div class="book-card">
+      <div class="book-cover" style="padding:0;overflow:hidden;"><img src="https://i.imgur.com/dZyGJal.png" alt="What In Hell Do You Want" style="width:100%;height:100%;object-fit:cover;border-radius:6px;"/></div>
+      <div class="book-title">What In Hell Do You Want</div>
+      <div class="book-desc">A bold, no-nonsense guide that challenges you to stop drifting through life and finally answer the question that matters most. Real talk, real reflection, real change.</div>
+      <div class="price-label">📱 E-Book — $10.00</div>
+      <a href="https://payhip.com/b/Z32BY" target="_blank" class="btn-buy btn-ebook">Buy E-Book</a>
+      <div class="price-label">📦 Physical Book — Coming Soon</div>
+      <span class="btn-buy btn-coming">Physical Copy Coming Soon</span>
+    </div>
+
+    <!-- BOOK 4: Racism - The Poison In The Promise -->
+    <div class="book-card">
+      <div class="book-cover" style="padding:0;overflow:hidden;"><img src="https://i.imgur.com/kcyw97B.png" alt="Racism - The Poison In The Promise" style="width:100%;height:100%;object-fit:cover;border-radius:6px;"/></div>
+      <div class="book-title">Racism — The Poison In The Promise</div>
+      <div class="book-desc">Racism isn't just America's wound—it's the sin sending more WHITE AMERICAN SOULS to hell than almost any other. A bold biblical, historical, and clinical reckoning with White America's soul. History, Scripture &amp; truth collide. Remember, satan is an evil genius, master strategist, manipulative, conniving and lying devil. — Job 13:2; John 10:10; James 2:9</div>
+      <div class="price-label">📱 E-Book — $10.00</div>
+      <a href="https://payhip.com/b/FbECe" target="_blank" class="btn-buy btn-ebook">Buy E-Book</a>
+      <div class="price-label">📦 Physical Book — Coming Soon</div>
+      <span class="btn-buy btn-coming">Physical Copy Coming Soon</span>
+    </div>
+
+    <!-- BOOK 5: Melancholy -->
+    <div class="book-card">
+      <div class="book-cover" style="padding:0;overflow:hidden;"><img src="https://i.imgur.com/ZXXjPJD.png" alt="Melancholy" style="width:100%;height:100%;object-fit:cover;border-radius:6px;"/></div>
+      <div class="book-title">Melancholy</div>
+      <div class="book-desc">Melancholy arrives with no reason — then convinces you there is one. This booklet names that "evil genius" and shows how to stop it before it lands: smile first, remember who you are, and choose joy before sadness ever gets through the door.</div>
+      <div class="price-label">📱 E-Book — FREE (Donation of any size)</div>
+      <a href="https://payhip.com/b/zQInp" target="_blank" class="btn-buy btn-ebook">Get E-Book</a>
+      <div class="price-label">📦 Physical Book — Coming Soon</div>
+      <span class="btn-buy btn-coming">Physical Copy Coming Soon</span>
+    </div>
+
+    <!-- BOOK 6: One Blood -->
+    <div class="book-card">
+      <div class="book-cover" style="padding:0;overflow:hidden;"><img src="https://i.imgur.com/c5I2czu.png" alt="One Blood" style="width:100%;height:100%;object-fit:cover;border-radius:6px;"/></div>
+      <div class="book-title">One Blood</div>
+      <div class="book-desc">One Blood proves all humanity descends from one Black couple in Africa. Science and Scripture agree: we are 99.9% identical. Race was invented. The lie ends here. One blood. One family. One God.</div>
+      <div class="price-label">📱 E-Book — $10.00</div>
+      <a href="https://payhip.com/b/e1BhF" target="_blank" class="btn-buy btn-ebook">Buy E-Book</a>
+      <div class="price-label">📦 Physical Book — Coming Soon</div>
+      <span class="btn-buy btn-coming">Physical Copy Coming Soon</span>
+    </div>
+
+    <!-- BOOK 7: Ichabod -->
+    <div class="book-card">
+      <div class="book-cover" style="padding:0;overflow:hidden;"><img src="https://i.imgur.com/gv8s3w3.png" alt="Ichabod - The Church of the Living Dead" style="width:100%;height:100%;object-fit:cover;border-radius:6px;"/></div>
+      <div class="book-title">Ichabod — The Church of the Living Dead</div>
+      <div class="book-desc">Ichabod confronts a church with form but no power. Pastor Willie Johnson draws on Scripture and Bishop C.H. Mason's fire-filled legacy to call believers back to prayer, fasting, holiness, and the glory that once filled God's house.</div>
+      <div class="price-label">📱 E-Book — $25.00</div>
+      <a href="https://payhip.com/b/gX1vr" target="_blank" class="btn-buy btn-ebook">Buy E-Book</a>
+      <div class="price-label">📦 Physical Book — Coming Soon</div>
+      <span class="btn-buy btn-coming">Physical Copy Coming Soon</span>
+    </div>
+
+    <!-- BOOK 8: Beware of The Squatter Family -->
+    <div class="book-card">
+      <div class="book-cover" style="padding:0;overflow:hidden;"><img src="https://i.imgur.com/cxxrWKR.png" alt="Beware of The Squatter Family" style="width:100%;height:100%;object-fit:cover;border-radius:6px;"/></div>
+      <div class="book-title">Beware of The Squatter Family</div>
+      <div class="book-desc">Sadness knocks first, then brings Anger, Depression, and Fear in behind it. Blending Scripture with real clinical cases, Willie E. Johnson, LCSW shows how negative emotions quietly take over a life left unguarded — and how to feel them fully without ever handing over the keys.</div>
+      <div class="price-label">📱 E-Book — $5.95</div>
+      <a href="https://payhip.com/b/SM9mx" target="_blank" class="btn-buy btn-ebook">Buy E-Book</a>
+      <div class="price-label">📦 Physical Book — Coming Soon</div>
+      <span class="btn-buy btn-coming">Physical Copy Coming Soon</span>
+    </div>
+
+  </div>
+</section>
+
+<section id="about">
+  <h2>About Willie Johnson</h2>
+  <p>Welcome! I am Willie Johnson, an independent author based in Las Vegas, Nevada. I write books that challenge your thinking, strengthen your relationships, and help you reclaim your power.</p>
+  <p>Every book you purchase here comes directly from me — no Amazon, no middleman. Your support goes directly to the author and helps me keep writing.</p>
+  <p>Digital books are delivered instantly after purchase. Physical books ship within 3–5 business days.</p>
+</section>
+
+<section id="contact">
+  <h2>Contact Me</h2>
+  <label for="cname">Your Name</label>
+  <input type="text" id="cname" placeholder="Your name" />
+  <label for="cemail">Your Email</label>
+  <input type="email" id="cemail" placeholder="your@email.com" />
+  <label for="cmessage">Message</label>
+  <textarea id="cmessage" placeholder="Questions about a book, bulk orders, etc."></textarea>
+  <button onclick="sendMsg()">Send Message</button>
+  <p id="thanks" style="display:none; color:#2c7a2c; font-family:Arial,sans-serif; margin-top:12px;">✅ Message sent! I will get back to you soon.</p>
+</section>
+
+<footer>
+  <p>© 2026 Willie Johnson Books · <a href="mailto:sadnessisapimp@gmail.com">sadnessisapimp@gmail.com</a></p>
+  <p style="margin-top:6px;">Secure payments powered by <a href="https://stripe.com" target="_blank">Stripe</a> &amp; <a href="https://payhip.com" target="_blank">Payhip</a></p>
+</footer>
+
+<script>
+  async function sendMsg() {
+    var name = document.getElementById("cname").value.trim();
+    var email = document.getElementById("cemail").value.trim();
+    var message = document.getElementById("cmessage").value.trim();
+    if (!name || !email) { alert("Please enter your name and email."); return; }
+    try {
+      var response = await fetch("https://formspree.io/f/xqeoydog", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name: name, email: email, message: message })
+      });
+      if (response.ok) {
+        document.getElementById("thanks").style.display = "";
+        document.getElementById("cname").value = "";
+        document.getElementById("cemail").value = "";
+        document.getElementById("cmessage").value = "";
+      } else {
+        alert("Something went wrong. Please email me directly at sadnessisapimp@gmail.com");
+      }
+    } catch(e) {
+      alert("Something went wrong. Please email me directly at sadnessisapimp@gmail.com");
+    }
+  }
+</script>
+
+</body>
+</html>
