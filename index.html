@@ -39,14 +39,17 @@
     footer a { color: #d4a96a; text-decoration: none; }
     @media (max-width: 520px) { header h1 { font-size: 1.6rem; } nav { gap: 14px; } }
 
-    .email-modal { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.7); z-index: 999; align-items: center; justify-content: center; }
-    .email-modal.open { display: flex; }
-    .email-box { background: #fff; border-radius: 12px; padding: 32px; max-width: 420px; width: 90%; text-align: center; }
-    .email-box h3 { font-size: 1.4rem; color: #2c1a0e; margin-bottom: 10px; }
-    .email-box p { font-family: Arial, sans-serif; color: #555; font-size: 0.95rem; margin-bottom: 16px; line-height: 1.6; }
-    .email-box input { width: 100%; padding: 12px; border: 2px solid #d4a96a; border-radius: 6px; font-size: 1rem; font-family: Arial, sans-serif; margin-bottom: 10px; }
-    .email-box .btn-go { width: 100%; padding: 12px; border-radius: 6px; font-size: 1rem; font-family: Arial, sans-serif; font-weight: bold; cursor: pointer; border: none; background: #2c7a2c; color: #fff; margin-bottom: 8px; }
-    .email-box .btn-skip { width: 100%; padding: 10px; border-radius: 6px; font-size: 0.9rem; font-family: Arial, sans-serif; cursor: pointer; border: none; background: #eee; color: #666; }
+
+    .modal-bg { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.75); z-index:9999; }
+    .modal-bg.show { display:block; }
+    .modal-box { background:#fff; border-radius:12px; padding:32px 28px; max-width:400px; width:92%; margin:80px auto; text-align:center; position:relative; }
+    .modal-close { position:absolute; top:12px; right:16px; font-size:1.6rem; cursor:pointer; background:none; border:none; color:#aaa; line-height:1; }
+    .modal-close:hover { color:#333; }
+    .modal-box h3 { font-size:1.3rem; color:#2c1a0e; margin-bottom:10px; }
+    .modal-box p { font-family:Arial,sans-serif; color:#555; font-size:0.92rem; margin-bottom:16px; line-height:1.6; }
+    .modal-box input { width:100%; padding:12px; border:2px solid #d4a96a; border-radius:6px; font-size:1rem; font-family:Arial,sans-serif; margin-bottom:12px; box-sizing:border-box; }
+    .modal-box .mbtn { width:100%; padding:13px; border-radius:6px; font-size:1rem; font-family:Arial,sans-serif; font-weight:bold; cursor:pointer; border:none; background:#2c7a2c; color:#fff; }
+    .modal-box .mbtn:hover { background:#1e5a1e; }
   </style>
 </head>
 <body>
@@ -257,6 +260,56 @@
 </footer>
 
 <script>
+
+  var bookUrl = '';
+
+  function openBookModal(url) {
+    bookUrl = url;
+    document.getElementById('modalEmailInput').value = '';
+    document.getElementById('bookModal').classList.add('show');
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+    
+    // Close button
+    document.getElementById('modalCloseBtn').addEventListener('click', function() {
+      document.getElementById('bookModal').classList.remove('show');
+    });
+
+    // Click outside modal to close
+    document.getElementById('bookModal').addEventListener('click', function(e) {
+      if (e.target === this) {
+        this.classList.remove('show');
+      }
+    });
+
+    // Get book button
+    document.getElementById('modalGetBtn').addEventListener('click', async function() {
+      var email = document.getElementById('modalEmailInput').value.trim();
+      if (!email || !email.includes('@')) {
+        alert('Please enter a valid email address to get your free book.');
+        return;
+      }
+      try {
+        await fetch('https://formspree.io/f/xqeoydog', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email: email, source: 'Book Download', message: 'Free book download signup' })
+        });
+      } catch(e) {}
+      document.getElementById('bookModal').classList.remove('show');
+      window.open(bookUrl, '_blank');
+    });
+
+    // Enter key in email field
+    document.getElementById('modalEmailInput').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        document.getElementById('modalGetBtn').click();
+      }
+    });
+
+  });
+
   async function sendMsg() {
     var name = document.getElementById("cname").value.trim();
     var email = document.getElementById("cemail").value.trim();
@@ -281,7 +334,7 @@
     }
   }
 
-  var pendingUrl = ''; document.addEventListener('DOMContentLoaded', function(){ document.getElementById('closeModalBtn').addEventListener('click', function(){ document.getElementById('emailModal').classList.remove('open'); }); });
+  ); });
   function openBookModal(url) {
     pendingUrl = url;
     document.getElementById('modalEmail').value = '';
@@ -307,13 +360,15 @@
 </script>
 
 
-<div class="email-modal" id="emailModal">
-  <div class="email-box"><button id="closeModalBtn" style="float:right;background:none;border:none;font-size:1.5rem;cursor:pointer;color:#999;margin-top:-10px;">✕</button>
-    <h3>📚 One Last Step — Get Your Free Book!</h3>
-    <p><strong>Your email is required to download.</strong><br>We will notify you when new books are published — no spam, ever!</p>
-    <input type="email" id="modalEmail" placeholder="your@email.com" />
-    <button class="btn-go" onclick="submitEmailAndGo()">✅ Get My Free Book</button>
-    
+
+
+<div class="modal-bg" id="bookModal">
+  <div class="modal-box">
+    <button class="modal-close" id="modalCloseBtn">&times;</button>
+    <h3>📚 One Last Step!</h3>
+    <p><strong>Enter your email to get your free book.</strong><br>We will let you know when new books are released — no spam, ever!</p>
+    <input type="email" id="modalEmailInput" placeholder="your@email.com" />
+    <button class="mbtn" id="modalGetBtn">✅ Get My Free Book</button>
   </div>
 </div>
 </body>
