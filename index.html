@@ -6,50 +6,86 @@
   <title>Willie Johnson Books</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { font-family: Georgia, 'Times New Roman', serif; background: #fdf6ee; color: #2c1a0e; }
-    header { background: #2c1a0e; color: #fdf6ee; text-align: center; padding: 32px 20px 24px; }
-    header h1 { font-size: 2.4rem; letter-spacing: 2px; }
-    header p { margin-top: 8px; font-size: 1.05rem; color: #d4a96a; font-style: italic; }
+    body { font-family: Georgia, serif; background: #fdf6ee; color: #2c1a0e; }
+    header { background: #2c1a0e; color: #fdf6ee; text-align: center; padding: 32px 20px; }
+    header h1 { font-size: 2.2rem; letter-spacing: 2px; }
+    header p { margin-top: 8px; font-size: 1rem; color: #d4a96a; font-style: italic; }
     nav { background: #4a2c0e; display: flex; justify-content: center; gap: 24px; padding: 12px; flex-wrap: wrap; }
-    nav a { color: #fdf6ee; text-decoration: none; font-size: 1rem; font-family: Arial, sans-serif; letter-spacing: 1px; }
+    nav a { color: #fdf6ee; text-decoration: none; font-size: 1rem; font-family: Arial, sans-serif; }
     nav a:hover { color: #d4a96a; }
     .kindle-banner { background: #ff9900; color: #000; text-align: center; padding: 14px 20px; font-family: Arial, sans-serif; font-size: 1rem; font-weight: bold; }
     .kindle-banner a { color: #000; text-decoration: underline; }
-    .free-banner { background: #1a6b1a; color: #fff; text-align: center; padding: 14px 20px; font-family: Arial, sans-serif; font-size: 1.05rem; font-weight: bold; }
+    .free-banner { background: #1a6b1a; color: #fff; text-align: center; padding: 14px 20px; font-family: Arial, sans-serif; font-size: 1rem; font-weight: bold; }
     section { padding: 48px 20px; max-width: 960px; margin: 0 auto; }
     h2 { font-size: 1.8rem; color: #4a2c0e; border-bottom: 3px solid #d4a96a; padding-bottom: 8px; margin-bottom: 28px; }
     .books-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 28px; }
     .book-card { background: #fff; border: 1px solid #e0ccb0; border-radius: 8px; padding: 20px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.07); }
     .book-cover { width: 100%; height: 180px; overflow: hidden; border-radius: 6px; margin-bottom: 14px; }
-    .book-cover img { width: 100%; height: 100%; object-fit: cover; border-radius: 6px; }
-    .book-title { font-size: 1.05rem; font-weight: bold; margin-bottom: 8px; color: #2c1a0e; }
-    .book-desc { font-size: 0.85rem; color: #7a5c3a; font-family: Arial, sans-serif; line-height: 1.5; margin-bottom: 14px; }
+    .book-cover img { width: 100%; height: 100%; object-fit: cover; }
+    .book-title { font-size: 1rem; font-weight: bold; margin-bottom: 8px; color: #2c1a0e; }
+    .book-desc { font-size: 0.83rem; color: #7a5c3a; font-family: Arial, sans-serif; line-height: 1.5; margin-bottom: 14px; }
     .free-label { font-size: 1rem; font-family: Arial, sans-serif; color: #1a6b1a; font-weight: bold; margin-bottom: 8px; }
-    .btn-free { display: block; width: 100%; padding: 10px; border-radius: 5px; font-size: 0.9rem; font-family: Arial, sans-serif; text-decoration: none; text-align: center; margin-bottom: 8px; border: none; font-weight: bold; cursor: pointer; background: #2c7a2c; color: #fff; }
-    .btn-free:hover { background: #1e5a1e; }
-    .btn-donate { display: block; width: 100%; padding: 10px; border-radius: 5px; font-size: 0.9rem; font-family: Arial, sans-serif; text-decoration: none; text-align: center; margin-bottom: 8px; border: none; font-weight: bold; cursor: pointer; background: #d4a96a; color: #2c1a0e; }
-    .btn-donate:hover { background: #b8893a; }
-    .btn-coming { display: block; width: 100%; padding: 10px; border-radius: 5px; font-size: 0.9rem; background: #ccc; color: #666; cursor: not-allowed; text-align: center; margin-bottom: 8px; font-family: Arial, sans-serif; }
-    #about p { font-size: 1.05rem; line-height: 1.8; max-width: 680px; color: #3a2010; margin-bottom: 12px; }
+    .btn-free { display: block; width: 100%; padding: 10px; border-radius: 5px; font-size: 0.9rem; font-family: Arial, sans-serif; text-align: center; margin-bottom: 8px; font-weight: bold; cursor: pointer; background: #2c7a2c; color: #fff; border: none; }
+    .btn-donate { display: block; width: 100%; padding: 10px; border-radius: 5px; font-size: 0.9rem; font-family: Arial, sans-serif; text-decoration: none; text-align: center; margin-bottom: 8px; font-weight: bold; background: #d4a96a; color: #2c1a0e; }
+    .btn-coming { display: block; width: 100%; padding: 10px; border-radius: 5px; font-size: 0.9rem; background: #ccc; color: #666; text-align: center; margin-bottom: 8px; font-family: Arial, sans-serif; }
+    #about p { font-size: 1rem; line-height: 1.8; max-width: 680px; color: #3a2010; margin-bottom: 12px; }
     #contact label { display: block; font-family: Arial, sans-serif; font-size: 0.95rem; margin-bottom: 4px; margin-top: 14px; color: #4a2c0e; }
     #contact input, #contact textarea { width: 100%; max-width: 500px; padding: 10px; border: 1px solid #c9a97a; border-radius: 5px; font-size: 0.95rem; font-family: Arial, sans-serif; background: #fff; }
     #contact textarea { height: 110px; resize: vertical; }
     #contact button { margin-top: 16px; background: #4a2c0e; color: #fdf6ee; border: none; padding: 12px 32px; border-radius: 5px; font-size: 1rem; cursor: pointer; font-family: Arial, sans-serif; }
     footer { background: #2c1a0e; color: #a08060; text-align: center; padding: 24px; font-family: Arial, sans-serif; font-size: 0.88rem; }
     footer a { color: #d4a96a; text-decoration: none; }
-    @media (max-width: 520px) { header h1 { font-size: 1.6rem; } nav { gap: 14px; } }
 
-
-    .modal-bg { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.75); z-index:9999; }
-    .modal-bg.show { display:block; }
-    .modal-box { background:#fff; border-radius:12px; padding:32px 28px; max-width:400px; width:92%; margin:80px auto; text-align:center; position:relative; }
-    .modal-close { position:absolute; top:12px; right:16px; font-size:1.6rem; cursor:pointer; background:none; border:none; color:#aaa; line-height:1; }
-    .modal-close:hover { color:#333; }
-    .modal-box h3 { font-size:1.3rem; color:#2c1a0e; margin-bottom:10px; }
-    .modal-box p { font-family:Arial,sans-serif; color:#555; font-size:0.92rem; margin-bottom:16px; line-height:1.6; }
-    .modal-box input { width:100%; padding:12px; border:2px solid #d4a96a; border-radius:6px; font-size:1rem; font-family:Arial,sans-serif; margin-bottom:12px; box-sizing:border-box; }
-    .modal-box .mbtn { width:100%; padding:13px; border-radius:6px; font-size:1rem; font-family:Arial,sans-serif; font-weight:bold; cursor:pointer; border:none; background:#2c7a2c; color:#fff; }
-    .modal-box .mbtn:hover { background:#1e5a1e; }
+    /* MODAL */
+    #bookModal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.75);
+      z-index: 99999;
+    }
+    #bookModal .modal-inner {
+      background: #fff;
+      border-radius: 12px;
+      padding: 36px 28px 28px;
+      max-width: 400px;
+      width: 92%;
+      margin: 80px auto;
+      text-align: center;
+      position: relative;
+    }
+    #bookModal .modal-x {
+      position: absolute;
+      top: 10px; right: 14px;
+      font-size: 1.8rem;
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: #999;
+      line-height: 1;
+    }
+    #bookModal h3 { font-size: 1.3rem; color: #2c1a0e; margin-bottom: 10px; }
+    #bookModal p { font-family: Arial, sans-serif; color: #555; font-size: 0.92rem; margin-bottom: 16px; line-height: 1.6; }
+    #bookModal input {
+      width: 100%; padding: 12px;
+      border: 2px solid #d4a96a;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-family: Arial, sans-serif;
+      margin-bottom: 12px;
+    }
+    #bookModal .modal-btn {
+      width: 100%; padding: 13px;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      cursor: pointer;
+      border: none;
+      background: #2c7a2c;
+      color: #fff;
+    }
   </style>
 </head>
 <body>
@@ -66,148 +102,144 @@
   <a href="#contact">Contact</a>
 </nav>
 
-<!-- KINDLE BANNER -->
 <div class="kindle-banner">
   📱 ALL BOOKS ARE ALSO FREE ON <a href="https://www.amazon.com/kindle-dbs/entity/author/B0F8Q3XZPL" target="_blank">AMAZON KINDLE UNLIMITED</a> — Search "Willie E. Johnson" on Amazon Kindle!
 </div>
-
-<!-- FREE BANNER -->
 <div class="free-banner">
   🎁 ALL E-BOOKS ARE 100% FREE — Please donate any amount if you are blessed!
+</div>
+
+<!-- EMAIL MODAL -->
+<div id="bookModal">
+  <div class="modal-inner">
+    <button class="modal-x" onclick="closeModal()">&times;</button>
+    <h3>📚 One Last Step!</h3>
+    <p><strong>Enter your email to get your free book.</strong><br>We will notify you when new books are released — no spam, ever!</p>
+    <input type="email" id="modalEmail" placeholder="your@email.com" />
+    <button class="modal-btn" onclick="getBook()">✅ Get My Free Book</button>
+  </div>
 </div>
 
 <section id="books">
   <h2>📖 Available Books — All FREE</h2>
   <div class="books-grid">
 
-    <!-- BOOK 1: Sadness Is A Pimp -->
     <div class="book-card">
       <div class="book-cover"><img src="https://i.imgur.com/pSZKTJl.png" alt="Sadness Is A Pimp"/></div>
       <div class="book-title">Sadness Is A Pimp</div>
       <div class="book-desc">Sadness doesn't just visit — it controls you, takes your energy, your joy, your power. Like a pimp, it profits from your pain while keeping you dependent. This book shows you how to break free and reclaim your power.</div>
       <div class="free-label">📱 E-Book — FREE</div>
-      <a href="javascript:void(0)" onclick="openBookModal('https://payhip.com/b/6eUfo');return false;" class="btn-free">⬇️ Download Free E-Book</a>
+      <button class="btn-free" onclick="openModal('https://payhip.com/b/6eUfo')">⬇️ Download Free E-Book</button>
       <a href="https://paypal.me/sadnessisapimp" target="_blank" class="btn-donate">💛 Please Donate Any Amount</a>
       <span class="btn-coming">📦 Physical Copy Coming Soon</span>
     </div>
 
-    <!-- BOOK 2: Tier 1 Marriage -->
     <div class="book-card">
-      <div class="book-cover"><img src="https://i.imgur.com/U7bNJKV.png" alt="Tier 1 - The Perfect Marriage"/></div>
+      <div class="book-cover"><img src="https://i.imgur.com/U7bNJKV.png" alt="Tier 1 Marriage"/></div>
       <div class="book-title">Tier 1 — The Perfect Marriage</div>
       <div class="book-desc">How to Create and Maintain the Perfect Marriage. A powerful guide to building a Tier 1 marriage rooted in love, trust, communication, and purpose. Whether newlywed or married for decades, elevate your relationship to its highest level.</div>
       <div class="free-label">📱 E-Book — FREE</div>
-      <a href="javascript:void(0)" onclick="openBookModal('https://payhip.com/b/awcyP');return false;" class="btn-free">⬇️ Download Free E-Book</a>
+      <button class="btn-free" onclick="openModal('https://payhip.com/b/awcyP')">⬇️ Download Free E-Book</button>
       <a href="https://paypal.me/sadnessisapimp" target="_blank" class="btn-donate">💛 Please Donate Any Amount</a>
       <span class="btn-coming">📦 Physical Copy Coming Soon</span>
     </div>
 
-    <!-- BOOK 3: What In Hell Do You Want -->
     <div class="book-card">
       <div class="book-cover"><img src="https://i.imgur.com/LDE96xs.jpeg" alt="What In Hell Do You Want"/></div>
       <div class="book-title">What In Hell Do You Want</div>
       <div class="book-desc">A bold, no-nonsense guide that challenges you to stop drifting through life and finally answer the question that matters most. Real talk, real reflection, real change.</div>
       <div class="free-label">📱 E-Book — FREE</div>
-      <a href="javascript:void(0)" onclick="openBookModal('https://payhip.com/b/Z32BY');return false;" class="btn-free">⬇️ Download Free E-Book</a>
+      <button class="btn-free" onclick="openModal('https://payhip.com/b/Z32BY')">⬇️ Download Free E-Book</button>
       <a href="https://paypal.me/sadnessisapimp" target="_blank" class="btn-donate">💛 Please Donate Any Amount</a>
       <span class="btn-coming">📦 Physical Copy Coming Soon</span>
     </div>
 
-    <!-- BOOK 4: Racism -->
     <div class="book-card">
-      <div class="book-cover"><img src="https://i.imgur.com/kcyw97B.png" alt="Racism - The Poison In The Promise"/></div>
+      <div class="book-cover"><img src="https://i.imgur.com/kcyw97B.png" alt="Racism"/></div>
       <div class="book-title">Racism — The Poison In The Promise</div>
-      <div class="book-desc">Racism isn't just America's wound—it's the sin sending more WHITE AMERICAN SOULS to hell than almost any other. A bold biblical, historical, and clinical reckoning with White America's soul. History, Scripture &amp; truth collide. Remember, satan is an evil genius, master strategist, manipulative, conniving and lying devil. — Job 13:2; John 10:10; James 2:9</div>
+      <div class="book-desc">Racism isn't just America's wound—it's the sin sending more WHITE AMERICAN SOULS to hell than almost any other. A bold biblical, historical, and clinical reckoning with White America's soul. History, Scripture &amp; truth collide. — Job 13:2; John 10:10; James 2:9</div>
       <div class="free-label">📱 E-Book — FREE</div>
-      <a href="javascript:void(0)" onclick="openBookModal('https://payhip.com/b/FbECe');return false;" class="btn-free">⬇️ Download Free E-Book</a>
+      <button class="btn-free" onclick="openModal('https://payhip.com/b/FbECe')">⬇️ Download Free E-Book</button>
       <a href="https://paypal.me/sadnessisapimp" target="_blank" class="btn-donate">💛 Please Donate Any Amount</a>
       <span class="btn-coming">📦 Physical Copy Coming Soon</span>
     </div>
 
-    <!-- BOOK 5: Melancholy -->
     <div class="book-card">
       <div class="book-cover"><img src="https://i.imgur.com/ZXXjPJD.png" alt="Melancholy"/></div>
       <div class="book-title">Melancholy</div>
       <div class="book-desc">Melancholy arrives with no reason — then convinces you there is one. This booklet names that "evil genius" and shows how to stop it before it lands: smile first, remember who you are, and choose joy before sadness ever gets through the door.</div>
       <div class="free-label">📱 E-Book — FREE</div>
-      <a href="javascript:void(0)" onclick="openBookModal('https://payhip.com/b/zQInp');return false;" class="btn-free">⬇️ Download Free E-Book</a>
+      <button class="btn-free" onclick="openModal('https://payhip.com/b/zQInp')">⬇️ Download Free E-Book</button>
       <a href="https://paypal.me/sadnessisapimp" target="_blank" class="btn-donate">💛 Please Donate Any Amount</a>
       <span class="btn-coming">📦 Physical Copy Coming Soon</span>
     </div>
 
-    <!-- BOOK 6: One Blood -->
     <div class="book-card">
       <div class="book-cover"><img src="https://i.imgur.com/c5I2czu.png" alt="One Blood"/></div>
       <div class="book-title">One Blood</div>
       <div class="book-desc">One Blood proves all humanity descends from one Black couple in Africa. Science and Scripture agree: we are 99.9% identical. Race was invented. The lie ends here. One blood. One family. One God.</div>
       <div class="free-label">📱 E-Book — FREE</div>
-      <a href="javascript:void(0)" onclick="openBookModal('https://payhip.com/b/e1BhF');return false;" class="btn-free">⬇️ Download Free E-Book</a>
+      <button class="btn-free" onclick="openModal('https://payhip.com/b/e1BhF')">⬇️ Download Free E-Book</button>
       <a href="https://paypal.me/sadnessisapimp" target="_blank" class="btn-donate">💛 Please Donate Any Amount</a>
       <span class="btn-coming">📦 Physical Copy Coming Soon</span>
     </div>
 
-    <!-- BOOK 7: Ichabod -->
     <div class="book-card">
-      <div class="book-cover"><img src="https://i.imgur.com/gv8s3w3.png" alt="Ichabod - The Church of the Living Dead"/></div>
+      <div class="book-cover"><img src="https://i.imgur.com/gv8s3w3.png" alt="Ichabod"/></div>
       <div class="book-title">Ichabod — The Church of the Living Dead</div>
       <div class="book-desc">Ichabod confronts a church with form but no power. Pastor Willie Johnson draws on Scripture and Bishop C.H. Mason's fire-filled legacy to call believers back to prayer, fasting, holiness, and the glory that once filled God's house.</div>
       <div class="free-label">📱 E-Book — FREE</div>
-      <a href="javascript:void(0)" onclick="openBookModal('https://payhip.com/b/gX1vr');return false;" class="btn-free">⬇️ Download Free E-Book</a>
+      <button class="btn-free" onclick="openModal('https://payhip.com/b/gX1vr')">⬇️ Download Free E-Book</button>
       <a href="https://paypal.me/sadnessisapimp" target="_blank" class="btn-donate">💛 Please Donate Any Amount</a>
       <span class="btn-coming">📦 Physical Copy Coming Soon</span>
     </div>
 
-    <!-- BOOK 8: Beware of The Squatter Family -->
     <div class="book-card">
-      <div class="book-cover"><img src="https://i.imgur.com/cxxrWKR.png" alt="Beware of The Squatter Family"/></div>
+      <div class="book-cover"><img src="https://i.imgur.com/cxxrWKR.png" alt="Squatter Family"/></div>
       <div class="book-title">Beware of The Squatter Family</div>
       <div class="book-desc">Sadness knocks first, then brings Anger, Depression, and Fear in behind it. Blending Scripture with real clinical cases, Willie E. Johnson, LCSW shows how negative emotions quietly take over a life left unguarded — and how to feel them fully without ever handing over the keys.</div>
       <div class="free-label">📱 E-Book — FREE</div>
-      <a href="javascript:void(0)" onclick="openBookModal('https://payhip.com/b/SM9mx');return false;" class="btn-free">⬇️ Download Free E-Book</a>
+      <button class="btn-free" onclick="openModal('https://payhip.com/b/SM9mx')">⬇️ Download Free E-Book</button>
       <a href="https://paypal.me/sadnessisapimp" target="_blank" class="btn-donate">💛 Please Donate Any Amount</a>
       <span class="btn-coming">📦 Physical Copy Coming Soon</span>
     </div>
 
-    <!-- BOOK 9: Prophets Apostles Saints -->
     <div class="book-card">
       <div class="book-cover"><img src="https://i.imgur.com/pyMG0by.png" alt="Prophets Apostles Saints"/></div>
-      <div class="book-title">Prophets, Apostles, Saints — Bishop C.H. Mason & Others</div>
+      <div class="book-title">Prophets, Apostles, Saints — Bishop C.H. Mason &amp; Others</div>
       <div class="book-desc">What enabled the prophets, apostles, and saints to endure suffering and painful deaths without denying the Name? From Daniel's den to Bishop C.H. Mason's Jim Crow arrest — the same fearless power is still available to you.</div>
       <div class="free-label">📱 E-Book — FREE</div>
-      <a href="javascript:void(0)" onclick="openBookModal('https://payhip.com/b/W8X2C');return false;" class="btn-free">⬇️ Download Free E-Book</a>
+      <button class="btn-free" onclick="openModal('https://payhip.com/b/W8X2C')">⬇️ Download Free E-Book</button>
       <a href="https://paypal.me/sadnessisapimp" target="_blank" class="btn-donate">💛 Please Donate Any Amount</a>
       <span class="btn-coming">📦 Physical Copy Coming Soon</span>
     </div>
 
-    <!-- BOOK 10: God-Incarnate Beings -->
     <div class="book-card">
       <div class="book-cover"><img src="https://i.imgur.com/5i2uaty.jpeg" alt="God-Incarnate Beings"/></div>
       <div class="book-title">God-Incarnate Beings — The New Human Species Born of God</div>
       <div class="book-desc">Born again means born of God — literally. Your spirit was dead in Adam. The sperma of God raised it to life. You are not a repaired sinner. You are a new human species, inhabited by the Holy Ghost, seated in heaven, built to do what Jesus did.</div>
       <div class="free-label">📱 E-Book — FREE</div>
-      <a href="javascript:void(0)" onclick="openBookModal('https://payhip.com/b/KUdRu');return false;" class="btn-free">⬇️ Download Free E-Book</a>
+      <button class="btn-free" onclick="openModal('https://payhip.com/b/KUdRu')">⬇️ Download Free E-Book</button>
       <a href="https://paypal.me/sadnessisapimp" target="_blank" class="btn-donate">💛 Please Donate Any Amount</a>
       <span class="btn-coming">📦 Physical Copy Coming Soon</span>
     </div>
 
-    <!-- BOOK 11: How To Maintain Your Sanity During & After Divorce -->
     <div class="book-card">
-      <div class="book-cover"><img src="https://i.imgur.com/a61IgTf.png" alt="How To Maintain Your Sanity During & After Divorce"/></div>
-      <div class="book-title">How To Maintain Your Sanity During & After Divorce — Divorce Is NOT The End Of Your Story</div>
+      <div class="book-cover"><img src="https://i.imgur.com/a61IgTf.png" alt="Divorce"/></div>
+      <div class="book-title">How To Maintain Your Sanity During &amp; After Divorce</div>
       <div class="book-desc">A pastor's own testimony anchors this faith-based guide to surviving divorce with dignity: marriage's design, warning signs, spiritual warfare over emotions, medical and legal realities, healing, and remarriage. Divorce is not the end of your story.</div>
       <div class="free-label">📱 E-Book — FREE</div>
-      <a href="javascript:void(0)" onclick="openBookModal('https://payhip.com/b/x2wIZ');return false;" class="btn-free">⬇️ Download Free E-Book</a>
+      <button class="btn-free" onclick="openModal('https://payhip.com/b/x2wIZ')">⬇️ Download Free E-Book</button>
       <a href="https://paypal.me/sadnessisapimp" target="_blank" class="btn-donate">💛 Please Donate Any Amount</a>
       <span class="btn-coming">📦 Physical Copy Coming Soon</span>
     </div>
 
-    <!-- BOOK 12: Deception: Deathbed Repentance -->
     <div class="book-card">
-      <div class="book-cover"><img src="https://i.imgur.com/fc6TKRw.png" alt="Deception: Deathbed Repentance"/></div>
-      <div class="book-title">Deception: Deathbed Repentance — The Grace & Mercy Of GOD</div>
+      <div class="book-cover"><img src="https://i.imgur.com/fc6TKRw.png" alt="Deathbed Repentance"/></div>
+      <div class="book-title">Deception: Deathbed Repentance — The Grace &amp; Mercy Of GOD</div>
       <div class="book-desc">When a dying thief said, "Lord, remember me," Jesus saved him instantly. Through Scripture, hard-won family testimony, and sober honesty about hell, this book proves God's mercy reaches to life's last breath — and warns none of us know when it comes.</div>
       <div class="free-label">📱 E-Book — FREE</div>
-      <a href="javascript:void(0)" onclick="openBookModal('https://payhip.com/b/nw9DQ');return false;" class="btn-free">⬇️ Download Free E-Book</a>
+      <button class="btn-free" onclick="openModal('https://payhip.com/b/nw9DQ')">⬇️ Download Free E-Book</button>
       <a href="https://paypal.me/sadnessisapimp" target="_blank" class="btn-donate">💛 Please Donate Any Amount</a>
       <span class="btn-coming">📦 Physical Copy Coming Soon</span>
     </div>
@@ -215,23 +247,12 @@
   </div>
 </section>
 
-<!-- DONATION SECTION -->
-<section id="donate" style="background: #2c1a0e; color: #fdf6ee; text-align: center; padding: 48px 20px; max-width: 100%;">
-  <div style="max-width: 600px; margin: 0 auto;">
-    <h2 style="color: #d4a96a; border-bottom: 3px solid #d4a96a; padding-bottom: 8px; margin-bottom: 20px;">🙏 Support The Ministry</h2>
-    <p style="font-family: Arial, sans-serif; font-size: 1.05rem; line-height: 1.8; margin-bottom: 16px; color: #fdf6ee;">
-      All books are FREE because God's Word is for everyone.<br>
-      If you've been blessed, please give what's on your heart.
-    </p>
-    <p style="font-family: Arial, sans-serif; font-size: 0.95rem; color: #d4a96a; margin-bottom: 24px; font-style: italic;">
-      "Every man according as he purposeth in his heart, so let him give." — 2 Corinthians 9:7
-    </p>
-    <a href="https://paypal.me/sadnessisapimp" target="_blank" style="background: #d4a96a; color: #2c1a0e; padding: 14px 40px; border-radius: 6px; font-size: 1.1rem; font-family: Arial, sans-serif; font-weight: bold; text-decoration: none; display: inline-block;">
-      💛 Give A Freewill Donation
-    </a>
-    <p style="font-family: Arial, sans-serif; font-size: 0.85rem; color: #a08060; margin-top: 16px;">
-      Powered by PayPal — secure & instant
-    </p>
+<section id="donate" style="background:#2c1a0e;color:#fdf6ee;text-align:center;padding:48px 20px;max-width:100%;">
+  <div style="max-width:600px;margin:0 auto;">
+    <h2 style="color:#d4a96a;border-bottom:3px solid #d4a96a;padding-bottom:8px;margin-bottom:20px;">🙏 Support The Ministry</h2>
+    <p style="font-family:Arial,sans-serif;font-size:1.05rem;line-height:1.8;margin-bottom:16px;color:#fdf6ee;">All books are FREE because God's Word is for everyone.<br>If you've been blessed, please give what's on your heart.</p>
+    <p style="font-family:Arial,sans-serif;font-size:0.95rem;color:#d4a96a;margin-bottom:24px;font-style:italic;">"Every man according as he purposeth in his heart, so let him give." — 2 Corinthians 9:7</p>
+    <a href="https://paypal.me/sadnessisapimp" target="_blank" style="background:#d4a96a;color:#2c1a0e;padding:14px 40px;border-radius:6px;font-size:1.1rem;font-family:Arial,sans-serif;font-weight:bold;text-decoration:none;display:inline-block;">💛 Give A Freewill Donation</a>
   </div>
 </section>
 
@@ -248,10 +269,10 @@
   <input type="text" id="cname" placeholder="Your name" />
   <label for="cemail">Your Email</label>
   <input type="email" id="cemail" placeholder="your@email.com" />
-  <label for="cmessage">Message</label>
-  <textarea id="cmessage" placeholder="Questions about a book, bulk orders, etc."></textarea>
+  <label for="cmsg">Message</label>
+  <textarea id="cmsg" placeholder="Questions about a book, bulk orders, etc."></textarea>
   <button onclick="sendMsg()">Send Message</button>
-  <p id="thanks" style="display:none; color:#2c7a2c; font-family:Arial,sans-serif; margin-top:12px;">✅ Message sent! I will get back to you soon.</p>
+  <p id="thanks" style="display:none;color:#2c7a2c;font-family:Arial,sans-serif;margin-top:12px;">✅ Message sent! I will get back to you soon.</p>
 </section>
 
 <footer>
@@ -260,116 +281,59 @@
 </footer>
 
 <script>
+var currentUrl = '';
 
-  var bookUrl = '';
+function openModal(url) {
+  currentUrl = url;
+  document.getElementById('modalEmail').value = '';
+  document.getElementById('bookModal').style.display = 'block';
+}
 
-  function openBookModal(url) {
-    bookUrl = url;
-    document.getElementById('modalEmailInput').value = '';
-    document.getElementById('bookModal').classList.add('show');
+function closeModal() {
+  document.getElementById('bookModal').style.display = 'none';
+}
+
+function getBook() {
+  var email = document.getElementById('modalEmail').value.trim();
+  if (!email || email.indexOf('@') === -1) {
+    alert('Please enter a valid email address to get your free book.');
+    return;
   }
-
-  document.addEventListener('DOMContentLoaded', function() {
-    
-    // Close button
-    document.getElementById('modalCloseBtn').addEventListener('click', function() {
-      document.getElementById('bookModal').classList.remove('show');
-    });
-
-    // Click outside modal to close
-    document.getElementById('bookModal').addEventListener('click', function(e) {
-      if (e.target === this) {
-        this.classList.remove('show');
-      }
-    });
-
-    // Get book button
-    document.getElementById('modalGetBtn').addEventListener('click', async function() {
-      var email = document.getElementById('modalEmailInput').value.trim();
-      if (!email || !email.includes('@')) {
-        alert('Please enter a valid email address to get your free book.');
-        return;
-      }
-      try {
-        await fetch('https://formspree.io/f/xqeoydog', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email: email, source: 'Book Download', message: 'Free book download signup' })
-        });
-      } catch(e) {}
-      document.getElementById('bookModal').classList.remove('show');
-      window.open(bookUrl, '_blank');
-    });
-
-    // Enter key in email field
-    document.getElementById('modalEmailInput').addEventListener('keypress', function(e) {
-      if (e.key === 'Enter') {
-        document.getElementById('modalGetBtn').click();
-      }
-    });
-
+  fetch('https://formspree.io/f/xqeoydog', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email: email, message: 'Free book download' })
   });
+  closeModal();
+  window.open(currentUrl, '_blank');
+}
 
-  async function sendMsg() {
-    var name = document.getElementById("cname").value.trim();
-    var email = document.getElementById("cemail").value.trim();
-    var message = document.getElementById("cmessage").value.trim();
-    if (!name || !email) { alert("Please enter your name and email."); return; }
-    try {
-      var response = await fetch("https://formspree.io/f/xqeoydog", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name: name, email: email, message: message })
-      });
-      if (response.ok) {
-        document.getElementById("thanks").style.display = "";
-        document.getElementById("cname").value = "";
-        document.getElementById("cemail").value = "";
-        document.getElementById("cmessage").value = "";
-      } else {
-        alert("Something went wrong. Please email me directly at sadnessisapimp@gmail.com");
-      }
-    } catch(e) {
-      alert("Something went wrong. Please email me directly at sadnessisapimp@gmail.com");
+window.onclick = function(e) {
+  var modal = document.getElementById('bookModal');
+  if (e.target === modal) {
+    closeModal();
+  }
+}
+
+async function sendMsg() {
+  var n = document.getElementById('cname').value.trim();
+  var e = document.getElementById('cemail').value.trim();
+  var m = document.getElementById('cmsg').value.trim();
+  if (!n || !e) { alert('Please enter your name and email.'); return; }
+  try {
+    var r = await fetch('https://formspree.io/f/xqeoydog', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name: n, email: e, message: m })
+    });
+    if (r.ok) {
+      document.getElementById('thanks').style.display = '';
+      document.getElementById('cname').value = '';
+      document.getElementById('cemail').value = '';
+      document.getElementById('cmsg').value = '';
     }
-  }
-
-  ); });
-  function openBookModal(url) {
-    pendingUrl = url;
-    document.getElementById('modalEmail').value = '';
-    document.getElementById('emailModal').classList.add('open');
-  }
-  function skipAndGo() {
-    document.getElementById('emailModal').classList.remove('open');
-    window.open(pendingUrl, '_blank');
-  }
-  async function submitEmailAndGo() {
-    var email = document.getElementById('modalEmail').value.trim();
-    if (!email || !email.includes('@')) { alert('Please enter a valid email address.'); return; }
-    try {
-      await fetch('https://formspree.io/f/xqeoydog', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: email, message: 'Book download signup' })
-      });
-    } catch(e) {}
-    document.getElementById('emailModal').classList.remove('open');
-    window.open(pendingUrl, '_blank');
-  }
+  } catch(err) {}
+}
 </script>
-
-
-
-
-<div class="modal-bg" id="bookModal">
-  <div class="modal-box">
-    <button class="modal-close" id="modalCloseBtn">&times;</button>
-    <h3>📚 One Last Step!</h3>
-    <p><strong>Enter your email to get your free book.</strong><br>We will let you know when new books are released — no spam, ever!</p>
-    <input type="email" id="modalEmailInput" placeholder="your@email.com" />
-    <button class="mbtn" id="modalGetBtn">✅ Get My Free Book</button>
-  </div>
-</div>
 </body>
 </html>
